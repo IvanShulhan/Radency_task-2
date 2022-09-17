@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Radency_task-2/static/css/main.a4d63976.css",
+    "main.js": "/Radency_task-2/static/js/main.cfb4ec7a.js",
+    "static/media/human-head-silhouette-with-cogwheels-svgrepo-com.svg": "/Radency_task-2/static/media/human-head-silhouette-with-cogwheels-svgrepo-com.3c243165523d21400980.svg",
+    "static/media/idea-svgrepo-com.svg": "/Radency_task-2/static/media/idea-svgrepo-com.a11489e5b3df3c4d21d1.svg",
+    "static/media/delete-svgrepo-com-white.svg": "/Radency_task-2/static/media/delete-svgrepo-com-white.ec10c1eb0869a25bbd69.svg",
+    "static/media/delete-svgrepo-com.svg": "/Radency_task-2/static/media/delete-svgrepo-com.38058a0e3bf3e8333a0f.svg",
+    "static/media/archive-box-fill-svgrepo-com-white.svg": "/Radency_task-2/static/media/archive-box-fill-svgrepo-com-white.4976a35ee849c520741c.svg",
+    "static/media/archive-box-fill-svgrepo-com.svg": "/Radency_task-2/static/media/archive-box-fill-svgrepo-com.bbb38897115bd0d6c756.svg",
+    "static/media/pen.svg": "/Radency_task-2/static/media/pen.8cea033a441e55e16714.svg",
+    "static/media/cancel-svgrepo-com.svg": "/Radency_task-2/static/media/cancel-svgrepo-com.1c7d41525150f6963f9d.svg",
+    "static/media/quote-right-svgrepo-com.svg": "/Radency_task-2/static/media/quote-right-svgrepo-com.2c1060ab02d8264b06c9.svg",
+    "static/media/cart-svgrepo-com.svg": "/Radency_task-2/static/media/cart-svgrepo-com.a90a51c2ca931c68f522.svg",
+    "index.html": "/Radency_task-2/index.html",
+    "static/media/inbox-unarchive-fill-svgrepo-com.svg": "/Radency_task-2/static/media/inbox-unarchive-fill-svgrepo-com.2803deae68874f57fc5a.svg",
+    "main.a4d63976.css.map": "/Radency_task-2/static/css/main.a4d63976.css.map",
+    "main.cfb4ec7a.js.map": "/Radency_task-2/static/js/main.cfb4ec7a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4d63976.css",
+    "static/js/main.cfb4ec7a.js"
+  ]
+}
