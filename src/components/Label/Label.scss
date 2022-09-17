@@ -1,0 +1,10 @@
+.label {
+  &__title {
+    font-size: 18px;
+    margin: 0 0 8px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}

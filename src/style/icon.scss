@@ -1,0 +1,72 @@
+.icon-wrapper {
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
+}
+
+.icon:not(:last-child) {
+  margin: 0 5px 0 0;
+}
+
+.icon {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 0;
+  width: 23px;
+  height: 23px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon--is-big {
+  width: 25px;
+  height: 25px;
+}
+
+.icon--archive-white {
+  background-image: url("../assets/icons/archive-box-fill-svgrepo-com-white.svg");
+}
+
+.icon--delete-white {
+  cursor: auto;
+  background-image: url("../assets/icons/delete-svgrepo-com-white.svg");
+}
+
+.icon--archive {
+  background-image: url("../assets/icons/archive-box-fill-svgrepo-com.svg");
+}
+
+.icon--unarchive {
+  background-image: url("../assets/icons/inbox-unarchive-fill-svgrepo-com.svg");
+}
+
+.icon--delete {
+  background-image: url("../assets/icons/delete-svgrepo-com.svg");
+}
+
+.icon--edit {
+  background-image: url("../assets/icons/pen.svg");
+}
+
+.icon--task {
+  background-image: url("../assets/icons/cart-svgrepo-com.svg");
+}
+
+.icon--idea {
+  background-image: url("../assets/icons/idea-svgrepo-com.svg");
+}
+
+.icon--random.thought {
+  background-image: url("../assets/icons/human-head-silhouette-with-cogwheels-svgrepo-com.svg");
+}
+
+.icon--quote {
+  background-image: url("../assets/icons/quote-right-svgrepo-com.svg");
+}

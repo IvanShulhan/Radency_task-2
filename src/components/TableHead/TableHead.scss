@@ -1,0 +1,17 @@
+.notes-table__head {
+  list-style: none;
+  background-color: #859cae;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-radius: 5px;
+  margin: 0 0 10px;
+
+  & th:first-of-type {
+    justify-content: center;
+  }
+}
