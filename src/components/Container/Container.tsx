@@ -1,40 +1,37 @@
-import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { toggleIsVisible, changeMode } from '../../features/formSlice';
 import { Form } from '../Form/Form';
 import { Table } from '../Table/Table';
 import './Container.scss';
 
 export const Container = () => {
-  const [isVisibleFofm, setIsVisibleFofm] = useState(false);
-
-  const changeIsVisibleFofm = () => {
-    setIsVisibleFofm(!isVisibleFofm)
-  }
+  const dispatch = useAppDispatch();
+  const { isVisible } = useAppSelector(state => state.form);
 
   return (
     <div className="container app__container">
-      {isVisibleFofm && (
+      {isVisible && (
         <span 
           className="container__mask"
-          onClick={changeIsVisibleFofm}
+          onClick={() => {
+            dispatch(toggleIsVisible())
+          }}
         />
       )}
       <div className="container__content">
-        <Table 
-          tableType="notes" 
-          callback={changeIsVisibleFofm}
-        />
+        <Table tableType="notes"/>
         <button 
           type="button" 
           className="container__create-button"
-          onClick={changeIsVisibleFofm}
+          onClick={() => {
+            dispatch(changeMode('create'));
+            dispatch(toggleIsVisible());
+          }}
         >
           Create Note
         </button>
         <Table tableType="statistic"/>
-        <Form 
-          isVisible={isVisibleFofm} 
-          changeIsVisibleFofm={changeIsVisibleFofm}
-        />
+        <Form/>
       </div>
     </div>
   )

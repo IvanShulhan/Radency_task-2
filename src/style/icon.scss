@@ -8,12 +8,8 @@
   background-color: #444;
 }
 
-.icon:not(:last-child) {
-  margin: 0 5px 0 0;
-}
-
 .icon {
-  cursor: pointer;
+  cursor: auto;
   border: none;
   outline: none;
   background-color: transparent;
@@ -23,50 +19,58 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
 
-.icon--is-big {
-  width: 25px;
-  height: 25px;
-}
+  &:not(:last-child) {
+    margin: 0 5px 0 0;
+  }
 
-.icon--archive-white {
-  background-image: url("../assets/icons/archive-box-fill-svgrepo-com-white.svg");
-}
+  &--is-big {
+    width: 25px;
+    height: 25px;
+  }
 
-.icon--delete-white {
-  cursor: auto;
-  background-image: url("../assets/icons/delete-svgrepo-com-white.svg");
-}
+  &--archive-white {
+    cursor: pointer;
+    background-image: url("../assets/icons/archive-box-fill-svgrepo-com-white.svg");
+  }
 
-.icon--archive {
-  background-image: url("../assets/icons/archive-box-fill-svgrepo-com.svg");
-}
+  &--delete-white {
+    background-image: url("../assets/icons/delete-svgrepo-com-white.svg");
+  }
 
-.icon--unarchive {
-  background-image: url("../assets/icons/inbox-unarchive-fill-svgrepo-com.svg");
-}
+  &--archive {
+    cursor: pointer;
+    background-image: url("../assets/icons/archive-box-fill-svgrepo-com.svg");
+  }
 
-.icon--delete {
-  background-image: url("../assets/icons/delete-svgrepo-com.svg");
-}
+  &--unarchive {
+    cursor: pointer;
+    background-image: url("../assets/icons/inbox-unarchive-fill-svgrepo-com.svg");
+  }
 
-.icon--edit {
-  background-image: url("../assets/icons/pen.svg");
-}
+  &--delete {
+    cursor: pointer;
+    background-image: url("../assets/icons/delete-svgrepo-com.svg");
+  }
+  
+  &--edit {
+    cursor: pointer;
+    background-image: url("../assets/icons/pen.svg");
+  }
 
-.icon--task {
-  background-image: url("../assets/icons/cart-svgrepo-com.svg");
-}
+  &--task {
+    background-image: url("../assets/icons/cart-svgrepo-com.svg");
+  }
 
-.icon--idea {
-  background-image: url("../assets/icons/idea-svgrepo-com.svg");
-}
+  &--idea {
+    background-image: url("../assets/icons/idea-svgrepo-com.svg");
+  }
 
-.icon--random.thought {
-  background-image: url("../assets/icons/human-head-silhouette-with-cogwheels-svgrepo-com.svg");
-}
+  &--random.thought {
+    background-image: url("../assets/icons/human-head-silhouette-with-cogwheels-svgrepo-com.svg");
+  }
 
-.icon--quote {
-  background-image: url("../assets/icons/quote-right-svgrepo-com.svg");
+  &--quote {
+    background-image: url("../assets/icons/quote-right-svgrepo-com.svg");
+  }
 }

@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../app/store';
 import { notes } from '../data/data';
 
 export interface Note {
@@ -24,6 +23,19 @@ export const notesSlice = createSlice({
   name: 'notes',
   initialState,
   reducers: {
+    editNote: (
+        state, 
+        action: PayloadAction<Omit<Note, 'created' | 'isArchived'>>
+    ) => {
+      const currNote = state.notes.find(note => note.id === action.payload.id);
+
+      if (currNote) {
+        currNote.name = action.payload.name;
+        currNote.category = action.payload.category;
+        currNote.content = action.payload.content;
+        currNote.dates = action.payload.dates;
+      }
+    },
     addNewNote: (state, action: PayloadAction<Note>) => {
       state.notes.push(action.payload);
     },
@@ -40,6 +52,10 @@ export const notesSlice = createSlice({
   },
 });
 
-export const { addNewNote, removeNote, toggleNoteToArchive } = notesSlice.actions;
-export const selectNotes = (state: RootState) => state.notes;
+export const { 
+  addNewNote, 
+  removeNote, 
+  toggleNoteToArchive,
+  editNote,
+} = notesSlice.actions;
 export default notesSlice.reducer;

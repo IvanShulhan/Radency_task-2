@@ -3,6 +3,7 @@ import { useAppSelector } from '../../app/hooks';
 import { Note } from '../../features/notesSlice';
 import { Row } from '../Row/Row';
 import { TableHead } from '../TableHead/TableHead';
+import './Table.scss';
 
 const notesTableHeadKeys = ['Name', 'Created', 'Category', 'Content', 'Dates'];
 const statisticTableHeadKeys = ['Note category', 'Active', 'Archived'];
@@ -70,7 +71,7 @@ export const Table: React.FC<Props> = ({ tableType, callback }) => {
         {tableType === 'notes' ? (
           visibleNotes.map((note: Note) => (
           <React.Fragment key={note.id} >
-            <Row note={note} callback={callback}/>
+            <Row note={note}/>
           </React.Fragment>
         ))) : (
           Object.entries(statistic).map((item) => (

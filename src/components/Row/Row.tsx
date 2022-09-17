@@ -10,12 +10,11 @@ import './Row.scss';
 type Props = {
   note?: Note;
   item?: [string, Statistic]; 
-  callback?: ( ) => void;
 };
 
 export const Row: React.FC<Props> = ({ note, item }) => {
   return (
-    <tr className="row notes-table__row">
+    <tr className="row table__row">
       {note && (
         <>
           <Cell identifier="is-darken">
@@ -42,17 +41,17 @@ export const Row: React.FC<Props> = ({ note, item }) => {
             <>
               <CellButton 
                 type="Edit" 
-                id={note.id} 
+                note={note} 
                 identifier="edit"
               />
               <CellButton 
                 type="Archive" 
-                id={note.id} 
+                note={note} 
                 identifier={!note.isArchived ? "archive" : "unarchive"}
               />
               <CellButton 
                 type="Delete" 
-                id={note.id} 
+                note={note} 
                 identifier="delete"
               />
             </>
