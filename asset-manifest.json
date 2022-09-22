@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Radency_task-2/static/css/main.a4d63976.css",
-    "main.js": "/Radency_task-2/static/js/main.cfb4ec7a.js",
+    "main.js": "/Radency_task-2/static/js/main.1aa1e42f.js",
     "static/media/human-head-silhouette-with-cogwheels-svgrepo-com.svg": "/Radency_task-2/static/media/human-head-silhouette-with-cogwheels-svgrepo-com.3c243165523d21400980.svg",
     "static/media/idea-svgrepo-com.svg": "/Radency_task-2/static/media/idea-svgrepo-com.a11489e5b3df3c4d21d1.svg",
     "static/media/delete-svgrepo-com-white.svg": "/Radency_task-2/static/media/delete-svgrepo-com-white.ec10c1eb0869a25bbd69.svg",
@@ -15,10 +15,10 @@
     "index.html": "/Radency_task-2/index.html",
     "static/media/inbox-unarchive-fill-svgrepo-com.svg": "/Radency_task-2/static/media/inbox-unarchive-fill-svgrepo-com.2803deae68874f57fc5a.svg",
     "main.a4d63976.css.map": "/Radency_task-2/static/css/main.a4d63976.css.map",
-    "main.cfb4ec7a.js.map": "/Radency_task-2/static/js/main.cfb4ec7a.js.map"
+    "main.1aa1e42f.js.map": "/Radency_task-2/static/js/main.1aa1e42f.js.map"
   },
   "entrypoints": [
     "static/css/main.a4d63976.css",
-    "static/js/main.cfb4ec7a.js"
+    "static/js/main.1aa1e42f.js"
   ]
 }
