@@ -155,7 +155,7 @@ export const Form: React.FC = () => {
         />
       </Label>
       <div className="form__button-block">
-        {createButton('reset', resetForm)};
+        {createButton('reset', resetForm)}
         {createButton('submit', submitForm)}
       </div>
     </form>
