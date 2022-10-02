@@ -3,8 +3,8 @@ import React from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { changeMode, setDefaultValue, toggleIsVisible } from '../../features/formSlice';
 import { Note, removeNote, toggleNoteToArchive } from '../../features/notesSlice';
-import styles from './CellButton.module.scss';
 import cellStyles from '../../modules/Icon.module.scss';
+import styles from './CellButton.module.scss';
 
 type Props = {
   note: Note;
