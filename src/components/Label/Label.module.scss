@@ -1,0 +1,7 @@
+.label {
+  @apply mb-6;
+
+  .title {
+    @apply text-lg mb-2 first-letter:uppercase;
+  }
+}

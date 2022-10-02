@@ -5,7 +5,7 @@ import { addNewNote, editNote } from '../../features/notesSlice';
 import { toggleIsVisible, defaultValue as clearForm } from '../../features/formSlice';
 
 import { Label } from '../Label/Label';
-import './Form.scss';
+import styles from './Form.module.scss';
 
 type ButtonType = 'submit' | 'reset';
 type EventType = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
@@ -21,7 +21,7 @@ const createButton = (type: ButtonType, callback: () => void) => (
   <button 
     type={type}
     className={classNames(
-      'form__button', [`form__button--${type}`]
+      styles.button, type === 'reset' ? styles.button_reset : styles.button_submit
     )}
     onClick={(event) => {
       event.preventDefault();
@@ -98,27 +98,29 @@ export const Form: React.FC = () => {
   return (
     <form 
       className={classNames(
-        'form', 'main__form', {'form--is-visible': isVisible},
+        styles.form,  {'flex': isVisible},
       )}
       id="form" 
       data-type="create"
     >
       {isVisibleErrMessage && (
-        <h4 className="form__error-message">
+        <h4 className={styles.errorMessage}>
           Please fill all fields
         </h4>)}
       <button 
-        className="form__cancel-button"
+        className={classNames(
+          styles.cancelButton
+        ) }
         onClick={() => {
           resetForm();
           dispatch(toggleIsVisible());
         }}
       />
-      <h3 className="form__title">Create note form</h3>
+      <h3 className={styles.title}>Create note form</h3>
       <Label name="name">
         <input 
           type="text" 
-          className="form__input form__input--input" 
+          className={styles.input} 
           placeholder="Enter a title" 
           id="name"
           value={formData.name}
@@ -130,7 +132,7 @@ export const Form: React.FC = () => {
       </Label>
       <Label name="category">
         <select 
-          className="form__input form__input--select" 
+          className={styles.input} 
           id="category" 
           value={formData.category}
           onChange={(event) => {
@@ -144,7 +146,9 @@ export const Form: React.FC = () => {
       </Label>
       <Label name="content">
         <textarea 
-          className="form__input form__input--textarea" 
+          className={classNames(
+            styles.input, 'resize-none', 'overflow-y-hidden'
+          )} 
           placeholder="Enter a note content" 
           id="content" 
           required
@@ -154,7 +158,7 @@ export const Form: React.FC = () => {
           }}
         />
       </Label>
-      <div className="form__button-block">
+      <div className={styles.buttonBlock}>
         {createButton('reset', resetForm)}
         {createButton('submit', submitForm)}
       </div>

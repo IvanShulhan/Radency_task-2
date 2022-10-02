@@ -1,5 +1,5 @@
 import React from 'react';
-import './Label.scss';
+import styles from './Label.module.scss';
 
 type Props = {
   name: string;
@@ -8,8 +8,8 @@ type Props = {
 
 export const Label: React.FC<Props> = (props) => {
   return (
-    <label htmlFor={props.name} className="label form__label">
-    <h4 className="label__title">{props.name}</h4>
+    <label htmlFor={props.name} className={styles.label}>
+    <h4 className={styles.title}>{props.name}</h4>
     {props.children}
   </label>
   )

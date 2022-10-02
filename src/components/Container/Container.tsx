@@ -2,27 +2,27 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { toggleIsVisible, changeMode } from '../../features/formSlice';
 import { Form } from '../Form/Form';
 import { Table } from '../Table/Table';
-import './Container.scss';
+import styles from './Container.module.scss';
 
 export const Container = () => {
   const dispatch = useAppDispatch();
   const { isVisible } = useAppSelector(state => state.form);
 
   return (
-    <div className="container app__container">
+    <div className={styles.body}>
       {isVisible && (
         <span 
-          className="container__mask"
+          className={styles.mask}
           onClick={() => {
             dispatch(toggleIsVisible())
           }}
         />
       )}
-      <div className="container__content">
+      <div className={styles.content}>
         <Table tableType="notes"/>
         <button 
           type="button" 
-          className="container__create-button"
+          className={styles.createButton}
           onClick={() => {
             dispatch(changeMode('create'));
             dispatch(toggleIsVisible());

@@ -3,12 +3,28 @@ import React from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { changeMode, setDefaultValue, toggleIsVisible } from '../../features/formSlice';
 import { Note, removeNote, toggleNoteToArchive } from '../../features/notesSlice';
-import './CellButton.scss';
+import styles from './CellButton.module.scss';
+import cellStyles from '../../modules/Icon.module.scss';
 
 type Props = {
   note: Note;
   type: string;
   identifier: string;
+}
+
+const createClassName = (value: string) => {
+  switch (value) {
+    case 'delete':
+      return 'bg-delete';
+    case 'archive':
+      return 'bg-archive';
+    case 'unarchive':
+      return 'bg-unarchive';
+    case 'edit':
+      return 'bg-edit';
+    default:
+      break;
+  }
 }
 
 export const CellButton: React.FC<Props> = ({ type, note, identifier }) => {
@@ -24,7 +40,9 @@ export const CellButton: React.FC<Props> = ({ type, note, identifier }) => {
   return (
   <button 
     className={classNames(
-        'cell-button', 'icon', 'cell__icon', `icon--${identifier}`,
+        styles.cellButton,
+        cellStyles.icon, 
+        createClassName(identifier)
     )}
     type="button" 
     onClick={() => {
