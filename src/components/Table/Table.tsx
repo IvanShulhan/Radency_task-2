@@ -3,7 +3,6 @@ import { useAppSelector } from '../../app/hooks';
 import { Note } from '../../features/notesSlice';
 import { Row } from '../Row/Row';
 import { TableHead } from '../TableHead/TableHead';
-import './Table.scss';
 
 const notesTableHeadKeys = ['Name', 'Created', 'Category', 'Content', 'Dates'];
 const statisticTableHeadKeys = ['Note category', 'Active', 'Archived'];
@@ -61,7 +60,7 @@ export const Table: React.FC<Props> = ({ tableType, callback }) => {
   }
   
   return (
-    <table className="table container__table">
+    <table className="mb-6">
       <TableHead 
         keys={tableType === 'notes' ? notesTableHeadKeys : statisticTableHeadKeys} 
         type={tableType} 

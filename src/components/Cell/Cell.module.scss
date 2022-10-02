@@ -1,0 +1,11 @@
+.cell {
+  @apply font-bold p-2.5 w-[200px] flex items-center justify-start;
+
+  .title, .text {
+    @apply inline-block text-ellipsis overflow-hidden whitespace-nowrap w-[95%] text-inherit;
+
+    &_isVisible {
+      @apply overflow-visible;
+    }
+  }
+}

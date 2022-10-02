@@ -5,26 +5,45 @@ import { Note } from '../../features/notesSlice';
 import { Cell } from '../Cell/Cell';
 import { CellButton } from '../CellButton/CellButton';
 import { Statistic } from '../Table/Table';
-import './Row.scss';
+import iconStyles from '../../modules/Icon.module.scss';
+import cellStyles from '../Cell/Cell.module.scss';
+import styles from './Row.module.scss';
 
 type Props = {
   note?: Note;
   item?: [string, Statistic]; 
 };
 
+const createClassName = (val: string) => {
+  switch (val) {
+    case 'Task':
+      return 'bg-task';
+    case 'Idea':
+      return 'bg-idea';
+    case 'Quote':
+      return 'bg-quote';
+    default: return 'bg-random';
+  }
+}
+
 export const Row: React.FC<Props> = ({ note, item }) => {
+  console.log(note?.category);
+  
   return (
-    <tr className="row table__row">
+    <tr className={styles.row}>
       {note && (
         <>
-          <Cell identifier="is-darken">
+          <Cell identifier="isDarken">
             <>
-              <span className="icon-wrapper cell__icon-wrapper">
-                <span className={`icon icon--${note.category.toLowerCase()}`}>
+              <span className={iconStyles.iconWrapper}>
+                <span className={classNames(
+                  iconStyles.icon, 
+                  createClassName(note.category)
+                )}>
                   {note.category}
                 </span>
               </span>
-              <h3 className="cell__title">
+              <h3 className={cellStyles.title}>
                 {note.name}
               </h3>
             </>      
@@ -32,12 +51,12 @@ export const Row: React.FC<Props> = ({ note, item }) => {
           <Cell content={note.created} />
           <Cell content={note.category} />
           <Cell>
-            <p className="cell__text">
+            <p className={cellStyles.title}>
               {note.content}
             </p>
           </Cell>
           <Cell content={note.dates} />
-          <Cell identifier="with-icons">
+          <Cell identifier="withIcons">
             <>
               <CellButton 
                 type="Edit" 
@@ -60,16 +79,18 @@ export const Row: React.FC<Props> = ({ note, item }) => {
       )}
       {item && (
         <>
-          <Cell identifier="is-darken">
+          <Cell identifier="isDarken">
             <>
-              <span className="icon-wrapper cell__icon-wrapper">
+              <span className={iconStyles.iconWrapper}>
                 <span className={classNames(
-                  'icon', [`icon--${item[0].toLowerCase()}`]
+                  iconStyles.icon, 
+                  createClassName(item[0])
+                  // [`bg-${item[0].toLowerCase()}`]
                 )}>
                   {item[0]}
                 </span>
               </span>
-              <h3 className="cell__title">
+              <h3 className={classNames(cellStyles.title, cellStyles.title_isVisible)}>
                 {item[0]}
               </h3>
             </>      

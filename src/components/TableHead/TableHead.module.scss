@@ -1,0 +1,7 @@
+.tableHead {
+  @apply w-[100%] list-none text-lg font-bold text-white flex items-center justify-between border-none mb-2.5 bg-[#859cae] rounded-md;
+
+  th {
+    @apply first-of-type:justify-center;
+  }
+}

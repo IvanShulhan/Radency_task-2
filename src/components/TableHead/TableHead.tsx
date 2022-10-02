@@ -1,4 +1,7 @@
-import './TableHead.scss';
+import styles from './TableHead.module.scss';
+import cellStyles from '../Cell/Cell.module.scss';
+import iconStyles from '../../modules/Icon.module.scss';
+import classNames from 'classnames';
 
 type Props = {
   type: string;
@@ -11,25 +14,31 @@ export const TableHead: React.FC<Props> = (
 ) => {
   return (
     <thead>
-      <tr className="notes-table__head">
+      <tr className={styles.tableHead}>
         {keys.map((key) => (
         <th 
-          className={'cell notes-table__cell'}
+          className={cellStyles.cell}
           key={key}
         >
           {key}
         </th>
         ))}
         {type === 'notes' ? (
-          <th className="cell notes-table__cell cell--with-icons">
+          <th className={classNames(
+            cellStyles.cell, 'min-w-[100px] w-max justify-end',
+          )}>
           <button 
-            className="icon cell__icon icon--is-big icon--archive-white" 
+            className={classNames(
+              iconStyles.icon, iconStyles.icon_isBig, 'bg-archiveWhite cursor-pointer'
+            )} 
             onClick={setVisibility}
           >
             Arcive
           </button>
           <span 
-            className="icon nocell__icon icon--is-big icon--delete-white"
+            className={classNames(
+              iconStyles.icon, iconStyles.icon_isBig, 'bg-deleteWhite'
+            )}
           >
             Delete
           </span>
