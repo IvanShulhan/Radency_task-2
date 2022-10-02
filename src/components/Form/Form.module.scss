@@ -14,7 +14,7 @@
   }
 
   .input {
-    @apply box-border text-inherit font-sans text-gray-600 border-t-0 border-x-0 outline-none border-b-2 border-gray-400 w-[280px] py-2.5 h-10 transition-colors hover:border-gray-600 placeholder:text-gray-300
+    @apply box-border text-inherit font-sans text-gray-600 border-t-0 border-x-0 outline-none border-b-2 border-gray-400 w-[280px] py-2.5 h-10 transition-colors hover:border-gray-600 placeholder:text-gray-300;
   }
 
   .buttonBlock {
@@ -25,11 +25,11 @@
     @apply cursor-pointer leading-none font-bold uppercase text-inherit w-24 py-2.5 flex items-center justify-center bg-white border border-gray-200 rounded-md transition-colors first:mr-4 hover:text-white;
 
     &_reset {
-      @apply hover:border-[#e64938eb] hover:bg-[#e64938cc]
+      @apply hover:border-[#e64938eb] hover:bg-[#e64938cc] block;
     }
 
     &_submit {
-      @apply hover:border-[#43b12ff0] hover:bg-[#43b12fe1]
+      @apply hover:border-[#43b12ff0] hover:bg-[#43b12fe1] block;
     }
   }
 }
